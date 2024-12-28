@@ -42,6 +42,7 @@ import com.example.pertemuan13.ui.CostumeTopAppBar
 import com.example.pertemuan13.ui.Navigation.DestinasiNavigasi
 import com.example.pertemuan13.ui.viewModel.HomeUiState
 import com.example.pertemuan13.ui.viewModel.HomeViewModel
+import com.example.pertemuan13.ui.viewModel.PenyediaViewModel
 
 object DestinasiHome: DestinasiNavigasi {
     override val route ="home"
@@ -54,7 +55,7 @@ fun HomeScreen(
     navigateToItemEntry:()->Unit,
     modifier: Modifier=Modifier,
     onDetailClick: (String) -> Unit ={},
-    viewModel: HomeViewModel = viewModel(/*factory = PenyediaViewModel.Factory*/)
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
@@ -127,7 +128,7 @@ fun HomeStatus(
 fun OnLoading(modifier: Modifier = Modifier){
     Image(
         modifier = modifier.size(200.dp),
-        painter = painterResource(R.drawable.ic_connection_error),
+        painter = painterResource(R.drawable.img),
         contentDescription = stringResource(R.string.loading)
     )
 }
@@ -144,7 +145,7 @@ fun OnError(retryAction:()->Unit, modifier: Modifier = Modifier){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ic_connection_error), contentDescription = ""
+            painter = painterResource(id = R.drawable.img), contentDescription = ""
         )
 
         Text(text = stringResource(R.string.loading_failed), modifier = Modifier.padding(16.dp))
@@ -230,3 +231,4 @@ fun MhsCard(
         }
     }
 }
+
