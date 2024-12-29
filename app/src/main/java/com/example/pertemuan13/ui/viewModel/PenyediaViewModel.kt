@@ -13,6 +13,7 @@ object PenyediaViewModel{
         initializer { HomeViewModel(AplikasiMahasiswa().container.mahasiswaRepository) }
         initializer { InsertViewModel(AplikasiMahasiswa().container.mahasiswaRepository) }
         initializer { DetailMhsViewModel(createSavedStateHandle(),AplikasiMahasiswa().container.mahasiswaRepository) }
+        initializer { UpdateMhsViewModel(createSavedStateHandle(),AplikasiMahasiswa().container.mahasiswaRepository) }
     }
 
     fun CreationExtras.AplikasiMahasiswa():MahasiswaApplications =
