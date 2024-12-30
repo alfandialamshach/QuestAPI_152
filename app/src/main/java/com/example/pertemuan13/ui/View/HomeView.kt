@@ -56,6 +56,7 @@ fun HomeScreen(
     modifier: Modifier=Modifier,
     onDetailClick: (String) -> Unit ={},
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
+
 ){
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
@@ -128,7 +129,7 @@ fun HomeStatus(
 fun OnLoading(modifier: Modifier = Modifier){
     Image(
         modifier = modifier.size(200.dp),
-        painter = painterResource(R.drawable.img),
+        painter = painterResource(R.drawable.loading),
         contentDescription = stringResource(R.string.loading)
     )
 }
@@ -145,7 +146,7 @@ fun OnError(retryAction:()->Unit, modifier: Modifier = Modifier){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.img), contentDescription = ""
+            painter = painterResource(id = R.drawable.error), contentDescription = ""
         )
 
         Text(text = stringResource(R.string.loading_failed), modifier = Modifier.padding(16.dp))
