@@ -32,7 +32,7 @@ fun CostumeTopAppBar(
                 imageVector = Icons.Default.Refresh,
                 contentDescription = "",
                 modifier = Modifier.clickable {
-                    onRefresh
+                    onRefresh()
                 })
         },
         modifier = modifier,
